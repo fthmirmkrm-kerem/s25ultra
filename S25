@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+#include <cstring>
+using namespace std;
+
+class  CepTelefonu{
+    public:
+    char model[30];
+    float fiyat;
+    bool aramaDurum;
+    
+    CepTelefonu(){
+    aramaDurum = false;
+   cout<<"--> Bir CepTelefonu NESNESİ oluşturuldu (YAPICI METOT calisti)."<<endl; 
+   cout<<"    Arama durumu baslamgicta:"<<aramaDurum<<endl; 
+}
+
+ ~CepTelefonu(){
+   cout<<"<-- Bir CepTelefonu NESNESİ yok edildi (YIKICI METOT calisti)."<<endl; 
+   cout<<" gule gule   "<<model<<"!"<<endl; 
+}
+
+void aramaBaslat(string m){
+aramaDurum = true;
+string modelStr(model);
+cout<<modelStr<<" ile "<<m<<"aramya baslandi..."<<endl;
+}
+};
+
+int main()
+{
+   cout<<"### MAIN Fonksiyonu Basliyor ###"<<endl; 
+CepTelefonu benimTelefonum;
+strcpy(benimTelefonum.model,"Samsung S25");
+benimTelefonum.fiyat = 100.000;
+benimTelefonum.aramaBaslat("Annemi");
+cout<<"Telefonun fiyati:"<<benimTelefonum.fiyat<<endl;
+cout<<"### MAIN Fonksiyonu Bitiyor ###"<<endl;
+    return 0;
+}
